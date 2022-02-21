@@ -18,9 +18,9 @@ class ViewController: UIViewController {
         
         let hardness = sender.currentTitle
         
-       
+        
     }
     
-   
+    @IBOutlet weak var Time: UILabel!
     
 }
