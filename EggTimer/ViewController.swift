@@ -18,7 +18,7 @@ class ViewController: UIViewController {
         
        secondRemaining =  eggTimes[hardness]!
         
-        timer = Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(updateTimer), userInfo: nil, repeats: true)
+        timer = Timer.scheduledTimer(timeInterval: 0.1, target: self, selector: #selector(updateTimer), userInfo: nil, repeats: true)
 
     }
     
@@ -27,11 +27,12 @@ class ViewController: UIViewController {
             Time.text = "\(secondRemaining) seconds"
             secondRemaining -= 1
             if secondRemaining == 0{
-                
+                titleText.text = "Your egg is ready!"
             }
         }
     }
     
     @IBOutlet weak var Time: UILabel!
     
+    @IBOutlet weak var titleText: UILabel!
 }

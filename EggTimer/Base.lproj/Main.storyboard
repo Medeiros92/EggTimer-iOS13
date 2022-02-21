@@ -142,6 +142,7 @@
                     </view>
                     <connections>
                         <outlet property="Time" destination="bMt-tB-58o" id="luk-yL-No5"/>
+                        <outlet property="titleText" destination="XLm-5r-pSP" id="yKm-YV-tYU"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
