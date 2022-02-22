@@ -1,11 +1,11 @@
 
 
 import UIKit
-import AVFoundation
+import AVFoundation //import lib player
 
 class ViewController: UIViewController {
     
-    let eggTimes : [String : Int] = ["Soft" : 3, "Medium" : 4, "Hard" : 7]
+    let eggTimes : [String : Int] = ["Soft" : 300, "Medium" : 420, "Hard" : 720]
     
     var totalTime = 0
     var secondsPassed = 0
@@ -21,21 +21,23 @@ class ViewController: UIViewController {
         
        totalTime =  eggTimes[hardness]!
         
+        // Reset
         progressBar.progress = 0.0
         secondsPassed = 0
         titleLabel.text = hardness
         
+        // Time and Velocity
         timer = Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(updateTimer), userInfo: nil, repeats: true)
 
     }
-    
+     // Play sound function
     func playSound() {
         let url = Bundle.main.url(forResource: "alarm_sound", withExtension: "mp3")
         player = try! AVAudioPlayer(contentsOf: url!)
         player.play()
                 
     }
-    
+     // Cronometer
     @objc func updateTimer() {
         
         if secondsPassed < totalTime {
